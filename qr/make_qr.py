@@ -2,7 +2,8 @@
 Ús:  python make_qr.py https://la-teua-url-final/
 Crea PNG (per imprimir) i SVG (vectorial) dins d'aquesta carpeta."""
 import sys, os, segno
-base = (sys.argv[1] if len(sys.argv) > 1 else 'https://ausaescoop.github.io/diversitat-montitxelvo/').rstrip('/')
+base = sys.argv[1] if len(sys.argv) > 1 else 'https://ausaescoop.github.io/diversitat-montitxelvo/'
+if not base.endswith('/'): base += '/'
 secs = {'inici': '', 'diversitat': '#diversitat', 'historia': '#historia',
         'referents': '#referents', 'recursos': '#recursos', 'exposicio': '#exposicio'}
 out = os.path.dirname(os.path.abspath(__file__))
