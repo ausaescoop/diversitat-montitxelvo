@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diversitat Montitxelvo</title>
+<meta name="description" content="Versió digital ampliada de l'exposició per la diversitat afectivosexual i de gènere de Montitxelvo (2026): història, referents valencians, recursos i enllaços.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Archivo:ital,wght@0,400;0,600;0,800;1,400&display=swap">
+<style>
+/* Layout: one mobile-first column (max 720px) with full-bleed pastel gradient bands, one per panel,
+   echoing the printed panels; chunky display headings, grotesque body. */
+:root{
+  --bg:#fbf7fa; --fg:#1d1a21; --muted:#5b5563; --line:rgba(29,26,33,.14);
+  --card:rgba(255,255,255,.62); --card-solid:#ffffff; --chip:rgba(255,255,255,.75);
+  --accent:#c2186b; --accent-ink:#ffffff; --focus:#2b6cd6;
+  --g1:linear-gradient(160deg,#cfe6ff 0%,#f6d6ec 55%,#fde2cf 100%);
+  --g2:linear-gradient(160deg,#cdeedd 0%,#efe3b8 45%,#f3cfe3 100%);
+  --g3:linear-gradient(160deg,#dcd3fb 0%,#f2d9ee 50%,#cfe3f5 100%);
+  --g4:linear-gradient(160deg,#fde0c5 0%,#f5d2e3 50%,#cfe0f7 100%);
+  --g5:linear-gradient(160deg,#ffe9b8 0%,#d9f0d4 50%,#cfe3f5 100%);
+  --rainbow:linear-gradient(90deg,#e63946,#f58a1f,#f4d03f,#2a9d5c,#2f6fd6,#8e44ad);
+  --display:"Bowlby One","Arial Black","Impact",sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16131a; --fg:#f2eef4; --muted:#b5adbd; --line:rgba(242,238,244,.16);
+    --card:rgba(20,16,24,.55); --card-solid:#221d28; --chip:rgba(20,16,24,.7);
+    --accent:#ff6fb0; --accent-ink:#1d1a21; --focus:#8ab4ff;
+    --g1:linear-gradient(160deg,#1f3550 0%,#4a2a44 55%,#4e3326 100%);
+    --g2:linear-gradient(160deg,#1f3f33 0%,#4a4426 45%,#4a2a44 100%);
+    --g3:linear-gradient(160deg,#2f2756 0%,#4a2a44 50%,#213a52 100%);
+    --g4:linear-gradient(160deg,#4e3326 0%,#4a2a44 50%,#213a52 100%);
+    --g5:linear-gradient(160deg,#4a4426 0%,#1f3f33 50%,#213a52 100%);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16131a; --fg:#f2eef4; --muted:#b5adbd; --line:rgba(242,238,244,.16);
+  --card:rgba(20,16,24,.55); --card-solid:#221d28; --chip:rgba(20,16,24,.7);
+  --accent:#ff6fb0; --accent-ink:#1d1a21; --focus:#8ab4ff;
+  --g1:linear-gradient(160deg,#1f3550 0%,#4a2a44 55%,#4e3326 100%);
+  --g2:linear-gradient(160deg,#1f3f33 0%,#4a4426 45%,#4a2a44 100%);
+  --g3:linear-gradient(160deg,#2f2756 0%,#4a2a44 50%,#213a52 100%);
+  --g4:linear-gradient(160deg,#4e3326 0%,#4a2a44 50%,#213a52 100%);
+  --g5:linear-gradient(160deg,#4a4426 0%,#1f3f33 50%,#213a52 100%);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+h1,h2,h3{text-wrap:balance;line-height:1.05;margin:0}
+h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+h1{font-size:clamp(2rem,8vw,3.6rem)}
+h2{font-size:clamp(1.6rem,6vw,2.6rem)}
+h3{font-family:var(--display);font-weight:400;font-size:1.25rem;letter-spacing:.01em}
+p{margin:0}
+.wrap{max-width:720px;margin-inline:auto;padding-inline:20px}
+.band{padding-block:56px 64px}
+.band>.wrap{display:grid;gap:28px}
+.band--1{background:var(--g1)} .band--2{background:var(--g2)} .band--3{background:var(--g3)} .band--4{background:var(--g4)} .band--5{background:var(--g5)}
+.eyebrow{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.lede{font-size:1.1rem;font-weight:600}
+.stack{display:grid;gap:14px}
+.stack p{max-width:62ch}
+strong{font-weight:800}
+.callout{font-family:var(--display);font-size:1.15rem;line-height:1.3;max-width:30ch;padding-left:16px;border-left:6px solid var(--accent)}
+.panel-note{font-size:.85rem;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.panel-note::before{content:"";display:inline-block;width:28px;height:8px;background:var(--rainbow);border-radius:4px}
+
+/* header + nav */
+.hero{position:relative;overflow:hidden;background:var(--g1)}
+.hero .wrap{display:grid;gap:22px;padding-block:28px 40px}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.hero-img{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.18)}
+.hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.hero-img figcaption,figure figcaption{font-size:.78rem;color:var(--muted);padding-top:6px}
+figure{margin:0}
+.hero .meta{display:flex;gap:10px;flex-wrap:wrap;font-size:.92rem;font-weight:600}
+.hero .meta span{background:var(--chip);padding:6px 12px;border-radius:999px}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+nav.toc ul{list-style:none;margin:0;padding:10px 20px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;max-width:760px;margin-inline:auto}
+nav.toc ul::-webkit-scrollbar{display:none}
+nav.toc a{white-space:nowrap;text-decoration:none;font-weight:800;font-size:.86rem;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line)}
+nav.toc a:hover,nav.toc a.is-active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* acronym grid */
+.acr{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.acr details{background:var(--card);border-radius:12px;padding:0;min-width:0}
+.acr summary{cursor:pointer;list-style:none;padding:12px 14px;display:flex;gap:10px;align-items:baseline;font-weight:600}
+.acr summary::-webkit-details-marker{display:none}
+.acr summary b{font-family:var(--display);font-size:1.5rem;line-height:1;color:var(--accent)}
+.acr summary::after{content:"+";margin-left:auto;font-family:var(--display);color:var(--muted)}
+.acr details[open] summary::after{content:"–"}
+.acr details p{padding:0 14px 14px;font-size:.95rem;max-width:none}
+
+/* concept cards */
+.four{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.four div{background:var(--card);border-radius:12px;padding:14px;min-width:0}
+.four h4{margin:0 0 4px;font-size:.95rem;font-weight:800}
+.four p{font-size:.92rem;max-width:none}
+
+/* myths */
+.myths{display:grid;gap:10px}
+.myth{background:var(--card);border-radius:12px;padding:14px 16px;min-width:0}
+.myth p{max-width:none}
+.myth .no{font-weight:800;color:var(--accent);text-transform:uppercase;font-size:.78rem;letter-spacing:.1em}
+.myth .q{font-weight:800;font-style:italic;margin-bottom:4px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.tl::before{content:"";position:absolute;left:30px;top:8px;bottom:8px;width:4px;background:var(--rainbow);border-radius:2px;opacity:.9}
+.tl li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding-block:10px;min-width:0}
+.tl .yr{font-family:var(--display);font-size:1.05rem;line-height:1;text-align:center;align-self:start;padding:8px 4px;background:var(--card-solid);border-radius:10px;position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.tl .yr.hl{background:var(--accent);color:var(--accent-ink)}
+.tl details{background:var(--card);border-radius:12px;min-width:0}
+.tl summary{cursor:pointer;list-style:none;padding:12px 14px;font-weight:600;display:flex;gap:10px;align-items:baseline}
+.tl summary::-webkit-details-marker{display:none}
+.tl summary::after{content:"+";margin-left:auto;font-family:var(--display);color:var(--muted);flex:none}
+.tl details[open] summary::after{content:"–"}
+.tl .where{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);flex:none}
+.tl details p{padding:0 14px 14px;font-size:.95rem;max-width:none}
+.tl details p a{font-weight:600}
+.legend{font-size:.85rem;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:4px;background:var(--card-solid);border:1px solid var(--line)}
+.legend i.hl{background:var(--accent);border-color:var(--accent)}
+
+/* photos row */
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.photos figure{min-width:0}
+.photos img{border-radius:10px;aspect-ratio:4/3;object-fit:cover;width:100%}
+
+/* referents */
+.ref{background:var(--card);border-radius:16px;padding:18px;display:grid;gap:14px;min-width:0}
+.ref .head{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+.ref .head img{width:96px;height:96px;object-fit:cover;border-radius:50%;border:4px solid var(--card-solid)}
+.ref .head img.sq{border-radius:14px}
+.ref .head .who{min-width:0}
+.ref .head .dates{font-size:.85rem;color:var(--muted);font-weight:600}
+.ref .panel{font-weight:600}
+.ref .more{font-size:.97rem;display:grid;gap:10px}
+.ref .more p{max-width:none}
+.links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.links a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:800;font-size:.85rem;padding:8px 12px;border-radius:999px;background:var(--card-solid);border:1.5px solid var(--line)}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+.links a::after{content:"↗";font-weight:400}
+.ref.mini{grid-template-columns:1fr;padding:14px 16px}
+.minis{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.minis h3{font-size:1.05rem}
+
+/* resources */
+.res{display:grid;gap:12px}
+.res article{background:var(--card);border-radius:14px;padding:16px;display:grid;gap:8px;min-width:0}
+.res h3{font-size:1.05rem}
+.res .tag{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.res p{max-width:none;font-size:.97rem}
+.tel{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tel code{font-family:var(--display);font-size:1.5rem;letter-spacing:.04em;background:none;user-select:all;font-variant-numeric:tabular-nums}
+.copy{font:inherit;font-weight:800;font-size:.8rem;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--card-solid);color:inherit;cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.urgent{border:2px solid var(--accent)}
+
+/* expo */
+.expo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.expo-grid img{aspect-ratio:3/4;object-fit:cover;border-radius:10px;width:100%}
+@media (max-width:480px){.expo-grid{grid-template-columns:repeat(2,1fr)}.expo-grid figure:last-child{display:none}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.facts div{background:var(--card);border-radius:12px;padding:12px 14px;min-width:0}
+.facts b{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.facts span{font-weight:800}
+
+footer{padding-block:40px 56px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;gap:18px;font-size:.9rem;color:var(--muted)}
+footer .inst{display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-weight:800;color:var(--fg);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+footer .inst span{padding-left:14px;border-left:4px solid var(--accent)}
+footer .rain{height:8px;background:var(--rainbow);border-radius:4px}
+footer details summary{cursor:pointer;font-weight:800;color:var(--fg)}
+footer ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:800;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+</style>
+
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top"><span>Montitxelvo · 2026</span><span>Exposició per la diversitat</span></div>
+    <h1>Diversitat afectivosexual i de gènere</h1>
+    <p class="lede">Versió digital de l'exposició: ací trobaràs els textos dels panells, informació ampliada, referents valencians i enllaços a recursos reals.</p>
+    <div class="meta"><span>4 panells</span><span>Casa de la Cultura</span><span>25 de setembre de 2026</span></div>
+    <figure class="hero-img">
+      <img src="img/hero.jpg" alt="Manifestació dels anys setanta amb una pancarta que diu Queremos que nos dejen en paz" width="1069" height="544">
+      <figcaption>Manifestació per l'alliberament homosexual, finals dels anys setanta. Fotografia d'arxiu.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Seccions">
+  <ul>
+    <li><a href="#diversitat">Diversitat</a></li>
+    <li><a href="#historia">Història</a></li>
+    <li><a href="#referents">Referents</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#exposicio">L'exposició</a></li>
+  </ul>
+</nav>
+
+<!-- ===================== PANELL 1 ===================== -->
+<section class="band band--1" id="diversitat">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Panell 1</p>
+      <h2>Diversitat afectivosexual i de gènere</h2>
+    </div>
+    <div class="stack">
+      <p class="panel-note">Text del panell</p>
+      <p>Les persones vivim i expressem la nostra identitat de moltes maneres diferents. La diversitat afectivosexual i de gènere forma part de la realitat humana i ha existit en totes les cultures i èpoques de la història.</p>
+      <p class="lede">L'acrònim LGTBIQ+ inclou diferents identitats i orientacions. Toca cada lletra per saber-ne més.</p>
+    </div>
+
+    <div class="acr">
+      <details><summary><b>L</b> Lesbianes</summary><p>Dones que senten atracció afectiva i sexual per altres dones.</p></details>
+      <details><summary><b>G</b> Gais</summary><p>Homes que senten atracció afectiva i sexual per altres homes. A vegades s'usa també com a terme general.</p></details>
+      <details><summary><b>T</b> Persones trans</summary><p>Persones la identitat de gènere de les quals no coincideix amb el sexe que se'ls va assignar en nàixer. Inclou dones trans, homes trans i persones no binàries.</p></details>
+      <details><summary><b>B</b> Bisexuals</summary><p>Persones que senten atracció per més d'un gènere, no necessàriament de la mateixa manera ni al mateix temps.</p></details>
+      <details><summary><b>I</b> Intersexuals</summary><p>Persones nascudes amb característiques sexuals (cromosomes, gònades o genitals) que no encaixen en les definicions típiques de cos masculí o femení. No és una orientació ni una identitat: és una variació corporal natural.</p></details>
+      <details><summary><b>Q</b> Queer</summary><p>Terme paraigua per a qui no s'identifica amb les categories tradicionals de gènere o d'orientació. També és una mirada crítica sobre eixes categories.</p></details>
+      <details><summary><b>+</b> Altres identitats</summary><p>Persones asexuals, pansexuals, no binàries, de gènere fluid… La diversitat no cap en sis lletres.</p></details>
+    </div>
+
+    <div class="stack">
+      <p class="eyebrow">Amplia · Quatre coses diferents</p>
+      <p>Sovint es confonen. Cadascuna és independent de les altres:</p>
+    </div>
+    <div class="four">
+      <div><h4>Sexe assignat</h4><p>El que s'anota en nàixer a partir del cos: home, dona o intersexual.</p></div>
+      <div><h4>Identitat de gènere</h4><p>Com se sent cada persona: dona, home, no binària… Només ho sap ella.</p></div>
+      <div><h4>Expressió de gènere</h4><p>Com es mostra al món: roba, veu, gestos. Pot canviar segons el dia.</p></div>
+      <div><h4>Orientació</h4><p>Cap a qui sent atracció: lesbiana, gai, bisexual, heterosexual, asexual…</p></div>
+    </div>
+
+    <div class="stack">
+      <p class="panel-note">Text del panell</p>
+      <p><strong>Reconéixer la diversitat ajuda a construir espais més inclusius, segurs i igualitaris per a totes les persones.</strong></p>
+      <p>Durant molts anys, les persones LGTBIQ+ van haver de viure en silenci per por a la discriminació, la persecució o la violència. A Espanya, especialment durant el franquisme, moltes persones van ser castigades simplement per estimar o expressar-se de manera diferent.</p>
+      <p>Malgrat això, el col·lectiu va començar a organitzar-se i a reivindicar drets, llibertat i visibilitat. <strong>Les manifestacions, les associacions i l'activisme social van ser claus per aconseguir avanços importants.</strong></p>
+      <p class="callout">Hui, molts drets són una realitat gràcies a les persones que van lluitar abans.</p>
+    </div>
+
+    <div class="stack">
+      <p class="eyebrow">Amplia · Idees que encara se senten</p>
+    </div>
+    <div class="myths">
+      <div class="myth"><p class="q">«Això és una moda d'ara.»</p><p class="no">No</p><p>Hi ha persones LGTBIQ+ documentades en totes les èpoques. A València tenim el cas de Margarida Borràs l'any 1460. El que és nou és poder dir-ho sense por.</p></div>
+      <div class="myth"><p class="q">«Als pobles no n'hi ha.»</p><p class="no">No</p><p>N'hi ha a tots els pobles. El que passa és que moltes persones han hagut de marxar o amagar-se. Projectes com Plumas de Pueblo recullen més de setanta iniciatives LGTBIQ+ en entorns rurals de tot l'Estat.</p></div>
+      <div class="myth"><p class="q">«Es pot canviar amb teràpia.»</p><p class="no">No</p><p>Les anomenades teràpies de conversió no funcionen i fan mal. Des de 2023 estan prohibides per llei a Espanya, i la llei valenciana de 2018 ja les prohibia.</p></div>
+      <div class="myth"><p class="q">«Ser intersexual és una malaltia.»</p><p class="no">No</p><p>És una variació del cos. El que ha fet mal històricament són les cirurgies sense consentiment a criatures intersexuals, que la llei de 2023 prohibeix.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PANELL 2 ===================== -->
+<section class="band band--2" id="historia">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Panell 2</p>
+      <h2>Història i repressió</h2>
+      <p class="lede" style="margin-top:8px;font-style:italic">Quan ser diferent era motiu de càstig</p>
+    </div>
+    <div class="stack">
+      <p class="panel-note">Text del panell</p>
+      <p>Durant gran part del segle XX, moltes <strong>persones homosexuals i trans van ser perseguides, marginades i castigades</strong> per les lleis i per la societat.</p>
+      <p>En 1954, la dictadura franquista va modificar la <em>Llei de Vagos y Maleantes</em> per incloure les persones homosexuals. Aquesta llei permetia vigilància policial, detencions, internaments, expulsions i «reeducació» forçosa.</p>
+      <p>Més endavant, la repressió va continuar amb la Llei de Perillositat i Rehabilitació Social (1970), que considerava l'homosexualitat una conducta perillosa.</p>
+      <p>Moltes persones van viure amagades per por al rebuig, la violència o la presó.</p>
+      <p class="callout">Recordar aquesta història és necessari per entendre la importància dels drets i llibertats actuals.</p>
+    </div>
+
+    <div class="photos">
+      <figure><img src="img/ley-peligrosidad.jpg" alt="Pancarta d'una manifestació que demana l'abolició de la Llei de Perillositat Social"><figcaption>Contra la Llei de Perillositat Social. Arxiu de premsa.</figcaption></figure>
+      <figure><img src="img/liberacion-castilla.jpg" alt="Pancarta del Front d'Alliberament Homosexual de Castella en una manifestació"><figcaption>Front d'Alliberament Homosexual de Castella. Arxiu ABC.</figcaption></figure>
+      <figure><img src="img/valencia-orgullosa.jpg" alt="Cartell que diu València Orgullosa en una manifestació davant l'estació del Nord"><figcaption>Orgull de València, davant l'estació del Nord.</figcaption></figure>
+    </div>
+
+    <div class="stack">
+      <p class="eyebrow">Amplia · Com funcionava la repressió</p>
+      <p>La <em>Ley de Vagos y Maleantes</em> era de 1933 i no castigava delictes, sinó «estats perillosos». En 1954 el franquisme hi va afegir «los homosexuales»: no calia haver fet res, només ser-ho. Les persones detingudes podien ser internades en «establiments de treball», com la colònia agrícola de Tefía (Fuerteventura), i després expulsades del seu lloc de residència.</p>
+      <p>La Llei de Perillositat i Rehabilitació Social de 1970 va mantindre la persecució i hi va afegir la «rehabilitació»: presons especials a Badajoz i Huelva i tractaments per «curar» l'homosexualitat. S'estima que al voltant de 5.000 persones van passar per fitxes policials, judicis o presó per aquestes lleis. A més, l'article d'«escàndol públic» del Codi Penal, vigent fins a 1988, servia per castigar qualsevol mostra d'afecte.</p>
+      <p>En 2009 l'Estat va reconéixer per primera vegada una indemnització a les persones que havien estat empresonades per la seua orientació o identitat.</p>
+    </div>
+
+    <div class="stack">
+      <p class="eyebrow">Dates clau en la lluita</p>
+      <p>Les sis dates del panell, més altres que ajuden a entendre el camí. Toca cada fita per llegir-ne més.</p>
+      <p class="legend"><span><i class="hl"></i>Al panell</span><span><i></i>Ampliació</span></p>
+    </div>
+    <ol class="tl">
+      <li><span class="yr">1460</span><details><summary><span class="where">València</span>Execució de Margarida Borràs</summary><p>El 28 de juliol de 1460 Margarida Borràs és executada a la plaça del Mercat per viure com a dona. És el primer cas documentat d'una persona trans a València. <a href="#referents">Veure la seua fitxa</a>.</p></details></li>
+      <li><span class="yr">1954</span><details><summary><span class="where">Espanya</span>Modificació de la Llei de Vagos y Maleantes</summary><p>La dictadura inclou les persones homosexuals en una llei pensada per a «estats perillosos». Comença la persecució legal sistemàtica.</p></details></li>
+      <li><span class="yr hl">1969</span><details><summary><span class="where">Nova York</span>Revolta de Stonewall</summary><p>La nit del 28 de juny, la clientela del bar Stonewall Inn es revolta contra una batuda policial. Es considera l'inici del moviment modern pels drets LGTBIQ+ i l'origen del Dia de l'Orgull.</p></details></li>
+      <li><span class="yr">1970</span><details><summary><span class="where">Espanya</span>Llei de Perillositat i Rehabilitació Social</summary><p>Substitueix la de Vagos y Maleantes i considera l'homosexualitat una conducta perillosa que cal «rehabilitar».</p></details></li>
+      <li><span class="yr hl">1977</span><details><summary><span class="where">Barcelona</span>Primera manifestació LGTBIQ+ a Espanya</summary><p>El 26 de juny de 1977, unes 4.000 persones es manifesten a les Rambles de Barcelona convocades pel Front d'Alliberament Gai de Catalunya. La policia la dissol a trets de pilotes de goma.</p></details></li>
+      <li><span class="yr hl">1979</span><details><summary><span class="where">Espanya · València</span>Despenalització i primer Orgull valencià</summary><p>En gener de 1979 l'homosexualitat deixa de ser una conducta perillosa segons la llei. Eixe mateix juny, el Moviment d'Alliberament Sexual del País Valencià convoca la primera manifestació de l'Orgull a València, amb milers de persones pel centre de la ciutat.</p></details></li>
+      <li><span class="yr">1986</span><details><summary><span class="where">València</span>Naix el Col·lectiu Lambda</summary><p>El 25 de setembre de 1986 es constitueix Lambda, que hui continua sent l'associació LGTBIQ+ de referència al País Valencià. <a href="#recursos">Com contactar-hi</a>.</p></details></li>
+      <li><span class="yr">1988</span><details><summary><span class="where">Espanya</span>Fi del delicte d'«escàndol públic»</summary><p>Es deroga l'article del Codi Penal que servia per castigar mostres d'afecte entre persones del mateix sexe.</p></details></li>
+      <li><span class="yr hl">1990</span><details><summary><span class="where">OMS</span>L'homosexualitat deixa de ser una malaltia</summary><p>El 17 de maig de 1990 l'Assemblea de l'Organització Mundial de la Salut l'elimina de la classificació internacional de malalties. Per això el 17 de maig és el Dia contra la LGTBIfòbia.</p></details></li>
+      <li><span class="yr hl">2005</span><details><summary><span class="where">Espanya</span>Matrimoni igualitari</summary><p>El 3 de juliol de 2005 entra en vigor la llei que permet el matrimoni entre persones del mateix sexe. Espanya és el tercer país del món a aprovar-lo.</p></details></li>
+      <li><span class="yr">2007</span><details><summary><span class="where">Espanya</span>Llei d'identitat de gènere</summary><p>Permet canviar el nom i el sexe al DNI sense cirurgia, però encara exigeix un diagnòstic mèdic i dos anys de tractament.</p></details></li>
+      <li><span class="yr">2017</span><details><summary><span class="where">País Valencià</span>Llei valenciana trans i primer regidor trans</summary><p>La Llei 8/2017 reconeix el dret a la identitat i l'expressió de gènere. Eixe any Guillem Montoro, d'Aielo de Malferit (la Vall d'Albaida), es convertia en el primer regidor obertament trans d'Espanya.</p></details></li>
+      <li><span class="yr">2018</span><details><summary><span class="where">País Valencià</span>Llei valenciana d'igualtat LGTBI</summary><p>La Llei 23/2018 garanteix drets en educació, sanitat i treball, i prohibeix les teràpies de conversió al territori valencià.</p></details></li>
+      <li><span class="yr hl">2023</span><details><summary><span class="where">Espanya</span>Llei trans estatal</summary><p>La Llei 4/2023, del 28 de febrer, permet l'autodeterminació de gènere al registre a partir dels 16 anys sense informes mèdics, prohibeix les teràpies de conversió i les cirurgies a criatures intersexuals sense consentiment.</p></details></li>
+      <li><span class="yr">2026</span><details><summary><span class="where">Montitxelvo</span>Exposició per la diversitat</summary><p>El 25 de setembre de 2026 Montitxelvo inaugura aquesta exposició a la Casa de la Cultura. <a href="#exposicio">Veure l'exposició</a>.</p></details></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== PANELLS 3 i 4 ===================== -->
+<section class="band band--3" id="referents">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Panells 3 i 4</p>
+      <h2>Referents LGTBIQ+ valencians</h2>
+    </div>
+    <p class="stack">Cinc persones de territori valencià, de 1460 a hui. Els textos dels panells van primer; després, l'ampliació i els enllaços per continuar.</p>
+
+    <article class="ref">
+      <div class="head">
+        <img src="img/margarida.jpg" alt="Il·lustració de Margarida Borràs">
+        <div class="who"><h3>Margarida Borràs</h3><p class="dates">Mallorca, segle XV · València, 1460</p></div>
+      </div>
+      <p class="panel-note">Text del panell</p>
+      <p class="panel">Margarida Borràs és considerada la primera dona trans documentada de la història de València. Va viure al segle XV i va ser executada públicament a la plaça del Mercat de València l'any 1460 per expressar la seua identitat de gènere i vestir-se com una dona. Actualment és una icona per a la defensa dels drets LGTBIQ+ a València.</p>
+      <div class="more">
+        <p class="eyebrow">Amplia</p>
+        <p>Batejada amb el nom de Miquel i filla, probablement, d'un notari mallorquí, va viure a València com a Margarida. L'única crònica de l'època, el dietari del capellà Melcior Miralles, explica que l'havien vista «vestida com a dona» en moltes cases de la ciutat. Va ser detinguda, torturada i penjada el 28 de juliol de 1460.</p>
+        <p>La seua història es va recuperar a mitjan anys noranta gràcies a l'historiador Vicent Josep Escartí. Des de 2002 els premis anuals del Col·lectiu Lambda porten el seu nom, en 2016 l'Ajuntament de València li va dedicar una plaça i en 2017 es va descobrir una placa a la plaça del Mercat, on va morir.</p>
+        <ul class="links">
+          <li><a href="https://ca.wikipedia.org/wiki/Margarida_Borr%C3%A0s" target="_blank" rel="noopener">Viquipèdia</a></li>
+          <li><a href="https://valenciaplaza.com/cultura-y-sociedad/la-cruel-ejecucion-de-margarida-borras-el-primer-transexual-ahorcado-por-su-sexo" target="_blank" rel="noopener">Reportatge · Valencia Plaza</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="head">
+        <img src="img/florencio.jpg" alt="Fotografia policial de Florencio Pla Meseguer" class="sq">
+        <div class="who"><h3>Florencio Pla Meseguer</h3><p class="dates">Vallibona, 1917 · Olocau, 2004</p></div>
+      </div>
+      <p class="panel-note">Text del panell</p>
+      <p class="panel">Va ser una persona intersexual que va créixer en un context de gran repressió social i moral durant el franquisme. En nàixer va ser inscrit com a Teresa, però al llarg de la seua vida es va identificar i va viure com a home. Després de patir humiliacions i persecució per part de la Guàrdia Civil, es va unir als maquis antifranquistes, convertint-se en una figura molt coneguda de la resistència armada contra la dictadura.</p>
+      <div class="more">
+        <p class="eyebrow">Amplia</p>
+        <p>Conegut als Ports com «la Pastora», va treballar de pastor i jornaler a la Pobla de Benifassà. En 1949, després que la Guàrdia Civil matara el masover per a qui treballava, es va unir a la guerrilla de l'AGLA, i a la muntanya va adoptar definitivament una identitat masculina i el nom de Florencio.</p>
+        <p>Detingut a Andorra en 1960, va ser condemnat a mort per crims que sempre va negar; la pena es va commutar i va passar 17 anys a la presó fins a l'indult de 1977. En 1980 va canviar legalment el nom i va viure a Olocau fins a la seua mort. La premsa sensacionalista el va convertir en un «monstre»; novel·les com <em>Donde nadie te encuentre</em> (Premi Nadal 2011) i la pel·lícula <em>Els mals noms</em> han recuperat la seua dignitat.</p>
+        <ul class="links">
+          <li><a href="https://ca.wikipedia.org/wiki/Florencio_Pla_Meseguer" target="_blank" rel="noopener">Viquipèdia</a></li>
+          <li><a href="https://www.3cat.cat/3catinfo/la-vida-de-la-pastora-un-personatge-de-pellicula-en-forma-de-pellicula/noticia/3379614/" target="_blank" rel="noopener">La pel·lícula Els mals noms · 3Cat</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="head">
+        <img src="img/margot.jpg" alt="La Margot actuant amb micròfon davant una cortina de llums">
+        <div class="who"><h3>Antonio Campos, La Margot</h3><p class="dates">Bétera, 1948</p></div>
+      </div>
+      <p class="panel-note">Text del panell</p>
+      <p class="panel">Margot va ser una de les primeres dones trans visibles i conegudes de la ciutat de València durant el franquisme i la Transició. Es va convertir en una figura popular de la vida nocturna valenciana i en un símbol de resistència i supervivència en una època marcada per la repressió i la discriminació cap a les persones trans i homosexuals.</p>
+      <div class="more">
+        <p class="eyebrow">Amplia</p>
+        <p>Antonio Campos Ramos va arribar a València des de Bétera als anys setanta i, animat per tres amics d'infantesa, va pujar a l'escenari de La Cetra, el primer local de la ciutat amb espectacle transformista cada nit. Des de 1977 les seues imitacions de Sara Montiel el van fer famós: el públic no sabia si veia un home o una dona, i eixa ambigüitat, en plena Llei de Perillositat Social, era ja un acte de valentia.</p>
+        <p>El nom l'agafa d'una cupletista valenciana de principis del segle XX. La seua trajectòria s'ha recollit al documental <em>La Margot, serio de día, coqueta de noche</em> i al film <em>València, t'estime</em>, i el MuVIM li va dedicar l'exposició <em>Trans(formar-se) en llibertat</em>.</p>
+        <ul class="links">
+          <li><a href="https://valenciaplaza.com/noticas-cultura-valencia-comunitat-valenciana/el-muvim-rinde-homenaje-a-la-margot" target="_blank" rel="noopener">Homenatge del MuVIM · Valencia Plaza</a></li>
+          <li><a href="https://valenciaplaza.com/cine-audiovisual-valencia-comunitat-valenciana/un-documental-reune-la-historia-lgtb-de-valencia" target="_blank" rel="noopener">Documental València, t'estime</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="head">
+        <img src="img/allan.jpg" alt="Retrat d'Allan Segura">
+        <div class="who"><h3>Allan Segura</h3><p class="dates">Benidorm · activista i treballador social</p></div>
+      </div>
+      <p class="panel-note">Text del panell</p>
+      <p class="panel">Allan Segura és un activista trans valencià i divulgador conegut pel seu treball en defensa dels drets de les persones trans i del col·lectiu LGTBIQ+. A través de xarxes socials, xarrades i espais educatius, comparteix la seua experiència personal per visibilitzar les realitats trans i combatre la discriminació.</p>
+      <div class="more">
+        <p class="eyebrow">Amplia</p>
+        <p>Va estudiar Treball Social a la Universitat de València i amb vint anys ja coordinava el Grup d'Assessorament en Temes Trans (GATT) del Col·lectiu Lambda. En 2021 va ser el primer home trans a participar en el certamen Mr. Gay Pride España, representant València, una manera de portar la visibilitat trans a espais on no hi havia estat mai.</p>
+        <p>A les xarxes parla de transició, salut mental, esport i masculinitats des de la seua experiència, amb un to proper que connecta especialment amb la gent jove.</p>
+        <ul class="links">
+          <li><a href="https://en.wikipedia.org/wiki/Allan_Segura_(model)" target="_blank" rel="noopener">Wikipedia</a></li>
+          <li><a href="https://valenciaplaza.com/valenciaplaza/lambda-lanza-una-campana-para-visibilizar-a-la-poblacion-trans" target="_blank" rel="noopener">Campanya de Lambda · Valencia Plaza</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ref">
+      <div class="head">
+        <img src="img/jimena.jpg" alt="Retrat de Jimena Amarillo sobre fons rosa">
+        <div class="who"><h3>Jimena Amarillo</h3><p class="dates">València, 2001 · cantant i compositora</p></div>
+      </div>
+      <p class="panel-note">Text del panell</p>
+      <p class="panel">Cantant, compositora i productora valenciana nascuda a València l'any 2001. S'ha convertit en una de les veus joves més destacades de l'escena musical i en un referent lèsbic per a moltes persones joves gràcies a la naturalitat amb què parla de la seua identitat i experiències.</p>
+      <div class="more">
+        <p class="eyebrow">Amplia</p>
+        <p>Es va donar a conéixer amb la cançó «Cafeliko» i va publicar el primer disc, <em>Cómo decirte, mi amor</em>, en 2021. Les seues lletres parlen d'amor entre dones sense eufemismes, i ella mateixa ho defensa: vol ser un referent perquè sent que en falten. El segon àlbum, <em>La pena no es cómoda</em>, repassa tres ruptures, i el tercer, <em>Angélika</em>, l'ha portada de gira per tot l'Estat.</p>
+        <ul class="links">
+          <li><a href="https://www.timeout.es/madrid/es/noticias/jimena-amarillo-si-que-quiero-ser-referente-siento-que-faltan-que-no-hay-que-tienen-miedo-033125" target="_blank" rel="noopener">Entrevista · Time Out</a></li>
+          <li><a href="https://valenciaplaza.com/generacion-v-jimena-amarillo" target="_blank" rel="noopener">Generació V · Valencia Plaza</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="stack">
+      <p class="eyebrow">Amplia · Altres noms de la Vall d'Albaida i de València</p>
+    </div>
+    <div class="minis">
+      <article class="ref mini">
+        <h3>Guillem Montoro</h3>
+        <p class="dates">Aielo de Malferit, 1990</p>
+        <p>Veí de la Vall d'Albaida, a pocs quilòmetres de Montitxelvo. En 2017 va ser el primer regidor obertament trans d'Espanya, a l'Ajuntament d'Aielo de Malferit. Va treballar en polítiques d'igualtat de la Generalitat.</p>
+        <ul class="links"><li><a href="https://en.wikipedia.org/wiki/Guillem_Montoro" target="_blank" rel="noopener">Wikipedia</a></li></ul>
+      </article>
+      <article class="ref mini">
+        <h3>Rampova</h3>
+        <p class="dates">València · artista i activista</p>
+        <p>Ànima del grup de cabaret Ploma 2, que des dels anys vuitanta va portar la sàtira i la reivindicació LGTBIQ+ als escenaris valencians. Un dels noms que recull el documental <em>València, t'estime</em>.</p>
+        <ul class="links"><li><a href="https://valenciaplaza.com/teatro-danza-valencia-comunitat-valenciana/un-coloquio-con-la-margot-musica-y-un-homenaje-a-rampova-para-celebrar-larmari-de-la-memoria" target="_blank" rel="noopener">L'Armari de la memòria · Valencia Plaza</a></li></ul>
+      </article>
+      <article class="ref mini">
+        <h3>Col·lectiu Lambda</h3>
+        <p class="dates">València, des de 1986</p>
+        <p>Quaranta anys d'activisme: de les primeres manifestacions de la Transició a serveis actuals d'atenció psicològica, jurídica i de salut. Organitza l'Orgull de València i els premis Margarida Borràs.</p>
+        <ul class="links"><li><a href="https://lambdavalencia.org/" target="_blank" rel="noopener">lambdavalencia.org</a></li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RECURSOS ===================== -->
+<section class="band band--4" id="recursos">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Amplia la informació</p>
+      <h2>Recursos i enllaços</h2>
+    </div>
+    <p class="stack">Si necessites informació, suport o simplement gent amb qui parlar, ací tens per on començar. Els telèfons es poden copiar amb un toc.</p>
+
+    <div class="res">
+      <article class="urgent">
+        <p class="tag">Si has patit una agressió o discriminació</p>
+        <h3>028 Arcoíris</h3>
+        <p>Telèfon gratuït i confidencial del Ministeri d'Igualtat contra la LGTBIfòbia: informació, assessorament jurídic i suport psicosocial. 24 hores, tots els dies, també en valencià.</p>
+        <div class="tel"><code>028</code><button class="copy" data-copy="028" type="button">Copia</button></div>
+        <p>En cas d'emergència immediata, crida al <strong>112</strong>.</p>
+      </article>
+
+      <article>
+        <p class="tag">Generalitat Valenciana</p>
+        <h3>Orienta</h3>
+        <p>Oficines d'atenció integral a persones LGTBIQ+ i les seues famílies, amb professionals de l'àmbit social, psicològic i legal. Telèfon gratuït.</p>
+        <div class="tel"><code>900 10 10 15</code><button class="copy" data-copy="900101015" type="button">Copia</button></div>
+      </article>
+
+      <article>
+        <p class="tag">Associació · València</p>
+        <h3>Lambda València</h3>
+        <p>Entitat valenciana que treballa per la igualtat i ofereix informació, assessorament, activitats i suport a les persones LGTBIQ+. Avinguda del Primer de Maig, 55, València.</p>
+        <div class="tel"><code>963 342 191</code><button class="copy" data-copy="963342191" type="button">Copia</button></div>
+        <ul class="links"><li><a href="https://lambdavalencia.org/" target="_blank" rel="noopener">lambdavalencia.org</a></li></ul>
+      </article>
+
+      <article>
+        <p class="tag">Associació · la Vall d'Albaida</p>
+        <h3>Vall Diversa</h3>
+        <p>Associació comarcal que promou la visibilitat, la igualtat i la creació de xarxes LGTBIQ+ al territori. Va nàixer en 2022 a Benigànim, la primera de la comarca, i és membre del Consell Local de Joventut d'Ontinyent.</p>
+        <ul class="links"><li><a href="https://periodicontinyent.com/es/naix-vall-diversa-el-primer-collectiu-lgtbi-de-la-comarca/" target="_blank" rel="noopener">Naix Vall Diversa · El Periòdic d'Ontinyent</a></li></ul>
+      </article>
+
+      <article>
+        <p class="tag">Ministeri d'Igualtat</p>
+        <h3>Mapa estatal de recursos LGTBIQ+</h3>
+        <p>Cercador d'associacions, serveis d'atenció i recursos LGTBIQ+ disponibles en diferents territoris: més de 1.200 serveis de tot l'Estat.</p>
+        <ul class="links"><li><a href="https://wrlgtbi.igualdad.gob.es/recursos-lgtbi/" target="_blank" rel="noopener">Obrir el mapa</a></li></ul>
+      </article>
+
+      <article>
+        <p class="tag">Món rural</p>
+        <h3>Plumas de Pueblo</h3>
+        <p>Mapa col·laboratiu que visibilitza les persones i iniciatives LGTBIQ+ del món rural i ajuda a trencar estereotips sobre la vida als pobles. Orgulls rurals, festivals, col·lectius.</p>
+        <ul class="links"><li><a href="https://proyectohortensia.net/plumasdepueblo/" target="_blank" rel="noopener">Obrir el mapa</a></li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPOSICIÓ ===================== -->
+<section class="band band--5" id="exposicio">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Montitxelvo, 25 de setembre de 2026</p>
+      <h2>L'exposició</h2>
+    </div>
+    <div class="facts">
+      <div><b>On</b><span>Casa de la Cultura, carrer de Dalt, 20</span></div>
+      <div><b>Quan</b><span>Divendres 25 de setembre, 19.00 h</span></div>
+      <div><b>Programa</b><span>Obertura, col·loqui amb l'artista i berenar</span></div>
+      <div><b>Visitable</b><span>Tot el cap de setmana</span></div>
+    </div>
+    <div class="stack">
+      <p>L'exposició combina els quatre panells que has llegit ací amb la mostra fotogràfica <strong>«No tan yermo: existències queer al món rural»</strong>, de la fotògrafa documental turolenca <strong>Elena P. Barth</strong>.</p>
+      <p>El seu treball dona visibilitat a les realitats LGTBIQ+ fora de les grans ciutats i qüestiona la idea que els pobles són espais tancats o poc acollidors per a la diversitat. Proposa mirar l'entorn rural com un lloc ple de possibilitats, xarxes, afectes i formes de vida.</p>
+      <ul class="links"><li><a href="https://www.instagram.com/elenapbarth/" target="_blank" rel="noopener">Elena P. Barth a Instagram</a></li></ul>
+    </div>
+    <div class="expo-grid">
+      <figure><img src="img/expo-visitants.jpg" alt="Visitants mirant les fotografies de l'exposició"></figure>
+      <figure><img src="img/expo-fotos.jpg" alt="Una visitant davant les fotografies de No tan yermo"></figure>
+      <figure><img src="img/expo-sala.jpg" alt="La sala de l'exposició amb el públic durant la inauguració"></figure>
+    </div>
+    <p class="callout">Als pobles també hi ha orgull.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="rain" aria-hidden="true"></div>
+    <div class="inst"><span>Ajuntament de Montitxelvo</span><span>Diputació de València</span></div>
+    <p>Activitat finançada per la convocatòria de subvencions de la Diputació de València a ajuntaments de menys de 15.000 habitants per al suport de les polítiques de diversitat sexual (2026).</p>
+    <details>
+      <summary>Crèdits de les imatges</summary>
+      <ul>
+        <li>Fotografies de manifestacions dels anys setanta: arxius de premsa (ABC, hemeroteques).</li>
+        <li>Il·lustració de Margarida Borràs: sèrie «Retrats» del setmanari Directa.</li>
+        <li>Florencio Pla Meseguer: fitxa policial, 1960, arxiu.</li>
+        <li>La Margot, Allan Segura i Jimena Amarillo: fotografies promocionals i de premsa.</li>
+        <li>Fotografies de l'exposició: Ajuntament de Montitxelvo.</li>
+      </ul>
+    </details>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Copiat</div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),t;
+  function show(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(t);t=setTimeout(function(){toast.classList.remove('show')},1600)}
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-copy');
+      var done=function(){show('Número copiat: '+v)};
+      var fail=function(){
+        var code=b.parentNode.querySelector('code');
+        if(code){var r=document.createRange();r.selectNodeContents(code);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}
+        show('Selecciona i copia el número');
+      };
+      try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(done,fail)} else {fail()} }catch(e){fail()}
+    });
+  });
+  var links=document.querySelectorAll('nav.toc a');
+  var secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
+  function mark(){
+    var y=window.scrollY+120,cur=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('is-active',i===cur)});
+  }
+  window.addEventListener('scroll',mark,{passive:true});mark();
+})();
+</script>
+
+</body>
+</html>
